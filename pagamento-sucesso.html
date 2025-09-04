@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Confirmado - Monetização Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero" style="min-height: 100vh;">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <div style="font-size: 5rem; margin-bottom: 2rem;">🎉</div>
+                <h1>Pagamento Confirmado com Sucesso!</h1>
+                <p class="hero-subtitle">Parabéns! Você deu um passo gigante rumo ao seu primeiro milhão online.</p>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin: 3rem 0;">
+                    <h3>📦 O que você recebeu:</h3>
+                    <div class="benefits" style="text-align: left; max-width: 500px; margin: 2rem auto;">
+                        <div class="benefit">✅ Acesso imediato à área de membros</div>
+                        <div class="benefit">✅ Todos os módulos do curso liberados</div>
+                        <div class="benefit">✅ Materiais complementares</div>
+                        <div class="benefit">✅ Grupo VIP no Telegram</div>
+                        <div class="benefit">✅ Suporte direto comigo</div>
+                        <div class="benefit">✅ Certificado de conclusão</div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(40, 167, 69, 0.2); padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+                    <h3>📧 Próximos Passos:</h3>
+                    <div style="text-align: left; max-width: 500px; margin: 1rem auto;">
+                        <p><strong>1.</strong> Verifique seu email com os dados de acesso</p>
+                        <p><strong>2.</strong> Acesse a área de membros</p>
+                        <p><strong>3.</strong> Comece pelo Módulo 1</p>
+                        <p><strong>4.</strong> Entre no grupo VIP do Telegram</p>
+                        <p><strong>5.</strong> Implemente as estratégias</p>
+                    </div>
+                </div>
+
+                <div style="margin: 3rem 0;">
+                    <a href="/area-membros.html" class="cta-button" style="display: inline-block; text-decoration: none; margin: 0.5rem;">
+                        🚀 ACESSAR ÁREA DE MEMBROS
+                    </a>
+                    <br>
+                    <a href="https://t.me/seu-grupo" target="_blank" class="cta-button" style="display: inline-block; text-decoration: none; margin: 0.5rem; background: #0088cc;">
+                        💬 ENTRAR NO GRUPO VIP
+                    </a>
+                </div>
+
+                <!-- Dados do Pedido -->
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin: 3rem 0;">
+                    <h4>📋 Dados do Pedido</h4>
+                    <div style="text-align: left; max-width: 400px; margin: 1rem auto; font-family: monospace;">
+                        <p><strong>Pedido:</strong> #<span id="pedido-id">12345</span></p>
+                        <p><strong>Data:</strong> <span id="data-pedido">25/01/2024</span></p>
+                        <p><strong>Valor:</strong> R$ <span id="valor-pedido">497,00</span></p>
+                        <p><strong>Status:</strong> <span style="color: #28a745;">✅ Confirmado</span></p>
+                    </div>
+                </div>
+
+                <!-- Bônus Especial -->
+                <div style="background: linear-gradient(45deg, #ff6b35, #f7931e); padding: 2rem; border-radius: 15px; margin: 3rem 0; color: white;">
+                    <h3>🎁 BÔNUS ESPECIAL!</h3>
+                    <p style="margin: 1rem 0;">Como você agiu rápido, ganhou acesso gratuito ao:</p>
+                    <h4>"Workshop: Primeiros R$ 1.000 em 30 dias"</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">
+                        Valor: R$ 197 | Seu investimento: R$ 0
+                    </p>
+                </div>
+
+                <!-- Depoimento Motivacional -->
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin: 3rem 0;">
+                    <h4>💭 Uma mensagem para você:</h4>
+                    <p style="font-style: italic; margin: 1rem 0;">
+                        "Você acabou de tomar a decisão mais importante da sua vida financeira. 
+                        Agora é hora de colocar em prática tudo que vai aprender. 
+                        Lembre-se: o sucesso não acontece da noite para o dia, mas com consistência e dedicação, 
+                        você chegará ao seu primeiro milhão online."
+                    </p>
+                    <p style="font-weight: bold;">- Seu Mentor</p>
+                </div>
+
+                <div style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.8;">
+                    <p>Dúvidas? Entre em contato:</p>
+                    <p>📧 <strong>suporte@milhao-online.com</strong></p>
+                    <p>📱 <strong>(11) 99999-9999</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Pegar dados da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pedidoId = urlParams.get('id') || Math.floor(Math.random() * 100000);
+        
+        // Atualizar dados do pedido
+        document.getElementById('pedido-id').textContent = pedidoId;
+        document.getElementById('data-pedido').textContent = new Date().toLocaleDateString('pt-BR');
+        
+        // Simular valor do pedido (em produção, buscar da API)
+        const valorPedido = localStorage.getItem('valor-pedido') || '497,00';
+        document.getElementById('valor-pedido').textContent = valorPedido;
+
+        // Enviar dados de conversão para analytics
+        console.log('Conversão confirmada:', {
+            pedidoId: pedidoId,
+            valor: valorPedido,
+            data: new Date().toISOString()
+        });
+
+        // Pixel de conversão (Facebook, Google Ads, etc.)
+        // Em produção, adicionar os pixels reais aqui
+
+        // Limpar dados temporários
+        localStorage.removeItem('carrinho');
+        localStorage.removeItem('valor-pedido');
+
+        // Confetes animados (opcional)
+        function criarConfete() {
+            const confete = document.createElement('div');
+            confete.style.position = 'fixed';
+            confete.style.top = '-10px';
+            confete.style.left = Math.random() * 100 + 'vw';
+            confete.style.width = '10px';
+            confete.style.height = '10px';
+            confete.style.background = ['#ff6b35', '#ffd700', '#28a745', '#2c5aa0'][Math.floor(Math.random() * 4)];
+            confete.style.zIndex = '9999';
+            confete.style.animation = 'fall 3s linear forwards';
+            
+            document.body.appendChild(confete);
+            
+            setTimeout(() => {
+                confete.remove();
+            }, 3000);
+        }
+
+        // Adicionar CSS para animação do confete
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Criar confetes por 5 segundos
+        const confeteInterval = setInterval(criarConfete, 200);
+        setTimeout(() => {
+            clearInterval(confeteInterval);
+        }, 5000);
+    </script>
+</body>
+</html>

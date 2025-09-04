@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Monetização Online</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .produtos-section {
+            padding: 120px 0 80px;
+            background: #f8f9fa;
+        }
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .produto-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .produto-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .produto-preco {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin: 1rem 0;
+        }
+        .produto-preco-antigo {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        .produto-beneficios {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        .produto-beneficios li {
+            padding: 0.5rem 0;
+            color: #333;
+        }
+        .produto-beneficios li:before {
+            content: "✅ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        .btn-comprar {
+            background: #28a745;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-comprar:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        .garantia {
+            background: #e8f5e8;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">💰 Milhão Digital</div>
+            <div class="nav-links">
+                <a href="/">Início</a>
+                <a href="/produtos.html">Produtos</a>
+                <a href="/area-membros.html">Área de Membros</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="produtos-section">
+        <div class="container">
+            <h1 style="text-align: center; font-size: 2.5rem; color: #2c5aa0; margin-bottom: 1rem;">
+                Produtos Digitais
+            </h1>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                Escolha o produto ideal para acelerar sua jornada ao milhão
+            </p>
+
+            <div class="produtos-grid">
+                <!-- Produto 1: Guia Básico -->
+                <div class="produto-card">
+                    <div class="produto-badge">MAIS VENDIDO</div>
+                    <h3>Guia Definitivo: Primeiros R$ 5K</h3>
+                    <div class="produto-preco">
+                        <span class="produto-preco-antigo">R$ 147</span> R$ 67
+                    </div>
+                    <ul class="produto-beneficios">
+                        <li>E-book com 120 páginas</li>
+                        <li>5 vídeo-aulas práticas</li>
+                        <li>Planilha de controle financeiro</li>
+                        <li>Templates de propostas</li>
+                        <li>Grupo VIP no Telegram</li>
+                        <li>Suporte por 30 dias</li>
+                    </ul>
+                    <button class="btn-comprar" onclick="adicionarCarrinho('guia-10k', 'Guia Definitivo: Primeiros R$ 5K', 97)">
+                        🛒 COMPRAR AGORA
+                    </button>
+                    <div class="garantia">
+                        🛡️ Garantia de 7 dias ou seu dinheiro de volta
+                    </div>
+                </div>
+
+                <!-- Produto 2: Curso Intermediário -->
+                <div class="produto-card">
+                    <div class="produto-badge">RECOMENDADO</div>
+                    <h3>Método Completo: R$ 50K/mês</h3>
+                    <div class="produto-preco">
+                        <span class="produto-preco-antigo">R$ 797</span> R$ 397
+                    </div>
+                    <ul class="produto-beneficios">
+                        <li>20 módulos em vídeo (15h)</li>
+                        <li>Materiais complementares</li>
+                        <li>Cases reais de sucesso</li>
+                        <li>Ferramentas e automações</li>
+                        <li>Mentoria em grupo mensal</li>
+                        <li>Certificado de conclusão</li>
+                        <li>Acesso vitalício</li>
+                    </ul>
+                    <button class="btn-comprar" onclick="adicionarCarrinho('curso-50k', 'Método Completo: R$ 50K/mês', 497)">
+                        🛒 COMPRAR AGORA
+                    </button>
+                    <div class="garantia">
+                        🛡️ Garantia de 15 dias ou seu dinheiro de volta
+                    </div>
+                </div>
+
+                <!-- Produto 3: Mentoria Premium -->
+                <div class="produto-card">
+                    <div class="produto-badge">PREMIUM</div>
+                    <h3>Mentoria: Caminho ao Milhão</h3>
+                    <div class="produto-preco">
+                        <span class="produto-preco-antigo">R$ 2.997</span>
+                        R$ 1.997
+                    </div>
+                    <ul class="produto-beneficios">
+                        <li>Mentoria individual (6 sessões)</li>
+                        <li>Plano personalizado</li>
+                        <li>Análise do seu negócio</li>
+                        <li>Acesso a todos os cursos</li>
+                        <li>Grupo exclusivo de mentorados</li>
+                        <li>Suporte direto por WhatsApp</li>
+                        <li>Garantia de resultados</li>
+                    </ul>
+                    <button class="btn-comprar" onclick="adicionarCarrinho('mentoria-milhao', 'Mentoria: Caminho ao Milhão', 1997)">
+                        🛒 COMPRAR AGORA
+                    </button>
+                    <div class="garantia">
+                        🛡️ Garantia de 30 dias ou seu dinheiro de volta
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carrinho Flutuante -->
+            <div id="carrinho-flutuante" style="display: none;">
+                <div style="position: fixed; top: 20px; right: 20px; background: #2c5aa0; color: white; padding: 1rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 1000;">
+                    <h4>🛒 Carrinho (<span id="carrinho-count">0</span>)</h4>
+                    <div id="carrinho-items"></div>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.3);">
+                        <strong>Total: R$ <span id="carrinho-total">0</span></strong>
+                    </div>
+                    <button onclick="finalizarCompra()" style="background: #28a745; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; margin-top: 1rem; cursor: pointer; width: 100%;">
+                        💳 FINALIZAR COMPRA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let carrinho = [];
+
+        function adicionarCarrinho(id, nome, preco) {
+            const item = { id, nome, preco };
+            carrinho.push(item);
+            atualizarCarrinho();
+            
+            // Feedback visual
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✅ ADICIONADO!';
+            button.style.background = '#28a745';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#28a745';
+            }, 2000);
+        }
+
+        function atualizarCarrinho() {
+            const carrinhoFlutuante = document.getElementById('carrinho-flutuante');
+            const carrinhoCount = document.getElementById('carrinho-count');
+            const carrinhoItems = document.getElementById('carrinho-items');
+            const carrinhoTotal = document.getElementById('carrinho-total');
+
+            if (carrinho.length > 0) {
+                carrinhoFlutuante.style.display = 'block';
+                carrinhoCount.textContent = carrinho.length;
+                
+                carrinhoItems.innerHTML = carrinho.map(item => `
+                    <div style="margin: 0.5rem 0; font-size: 0.9rem;">
+                        ${item.nome} - R$ ${item.preco}
+                    </div>
+                `).join('');
+                
+                const total = carrinho.reduce((sum, item) => sum + item.preco, 0);
+                carrinhoTotal.textContent = total.toLocaleString('pt-BR');
+            } else {
+                carrinhoFlutuante.style.display = 'none';
+            }
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert('Carrinho vazio!');
+                return;
+            }
+            
+            // Redirecionar para checkout
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            window.location.href = '/checkout.html';
+        }
+    </script>
+</body>
+</html>
